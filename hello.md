@@ -21,3 +21,7 @@ It blends Python-like syntax with socket rituals and f-string engines.
   ```hello
   def myfunc(arg1, arg2):
       print(f"args {arg1} {arg2}")
+<h2>Protocols</h2>
+
+Supported protocols: TCP and UDP.
+Default port: 80 if unspecified.
