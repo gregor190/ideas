@@ -1,0 +1,2 @@
+a audio player the main one to be powerd by:
+a seeed studio xiao esp32c3 
