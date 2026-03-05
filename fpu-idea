@@ -1,0 +1,48 @@
+# Modular Floating-Point Coprocessor Shrine
+
+## Concept
+A detachable ecosystem of math-oriented boards, built with Arduino/ESP-style technology.  
+Instead of each board being a full microcontroller, they act as **math oracles** with precomputed tables stored in EEPROM/ROM.
+
+## Architecture
+- **Main Board (ESP-like):**
+  - Connects to the computer.
+  - Routes math requests to the correct module.
+  - Handles communication protocols (I²C, SPI, or parallel bus).
+
+- **Daughter Modules (Arduino/EEPROM boards):**
+  - Each module specializes in one domain:
+    - Trigonometric tables (sin, cos, tan).
+    - Logarithm and exponential tables.
+    - Square roots and inverse roots.
+    - Floating-point multiplication/division approximations.
+  - Passive memory acts as a lookup oracle.
+
+## Workflow
+1. Computer sends a math request to the main board.
+2. Main board interprets the request and selects the right module.
+3. Module fetches the precomputed floating-point result from EEPROM.
+4. Main board returns the result to the computer.
+
+## Advantages
+- **Modularity:** Plug-and-play math cartridges.
+- **Scalability:** Add more EEPROM boards as the library grows.
+- **Retro Charm:** Mimics early computers/calculators that relied on ROM tables.
+
+## Challenges
+- **Precision vs. Memory Size:** EEPROMs are limited; fixed-point encoding may be needed.
+- **Latency:** Routing through multiple boards adds overhead.
+- **Protocol Design:** Requires a clean addressing system for modules.
+
+## Ritual Vision
+Imagine a **daughterboard shrine**:
+- One EEPROM for trig functions.
+- One EEPROM for logs/exp.
+- One EEPROM for roots.
+- A tiny controller multiplexes them.
+- The main board sees them as a floating-point coprocessor.
+
+## Future Expansion
+- Hot-swappable math cartridges.
+- Compression schemes for higher precision.
+- Hybrid fallback: CPU handles operations not covered by ROM.
