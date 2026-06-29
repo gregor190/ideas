@@ -1,0 +1,139 @@
+# 🧲 Metal Box Pi Zero 2 W Server (Headless Cyber Node)
+
+## 🧠 Core concept
+
+A fully headless mini server built around a  
+Raspberry Pi Zero 2 W  
+mounted inside a metal enclosure, running Linux server tools with no GUI.
+
+---
+
+## 🧱 Hardware layout
+
+### 🧠 Brain
+- Raspberry Pi Zero 2 W  
+- microSD card (OS + storage)
+
+### 🌐 Networking (recommended)
+- USB OTG adapter  
+- USB → Ethernet adapter (RTL8152/8153 chipset preferred)
+
+### 🔌 Power
+- Stable 5V 2.5A+ supply OR power bank  
+- short, high-quality USB cable  
+
+### 🌡 Cooling system (IMPORTANT)
+- Metal box lid acts as passive heatsink  
+- Thermal pad between CPU and lid  
+- Optional standoffs to maintain pressure + insulation  
+
+---
+
+## 🧲 Metal enclosure design (heatsink concept)
+
+### Heat flow design:
+```
+Pi CPU → thermal pad → metal lid → air (outside)
+```
+
+### Requirements:
+- Pi must NOT touch metal directly (insulation required)
+- Use thermal pad for heat transfer
+- Ensure firm but safe pressure contact
+- Metal box acts as a full chassis heatsink
+
+---
+
+## 💻 Software stack
+
+### OS
+- Raspberry Pi OS Lite OR Ubuntu Server (headless)
+
+### Core services
+- SSH (primary access method)
+- optional static IP (recommended)
+- optional lightweight web server (control panel)
+
+### Useful tools
+- nmap (network scanning)
+- python3 (automation + robot control)
+- tmux (persistent sessions)
+- git (project management)
+- htop (monitoring)
+
+---
+
+## ⚙️ System behavior
+
+- No GUI  
+- No monitor required  
+- Boot → immediately available over SSH  
+- Runs as always-on “command node”
+
+---
+
+## 🔗 Role in your ecosystem
+
+- 🧲 Metal box = server brain (headless compute node)  
+- 🍬 Mint tin = SSH macro controller / command input device  
+- 🤖 Robot (DarkPaw) = physical output system  
+- 📱 Laptop/phone = remote access interface  
+
+---
+
+# 🌡 Metal Lid Heatsink System (Passive Cooling Design)
+
+## 🧠 Concept
+
+Use the metal lid of the enclosure as a large passive heatsink for the Pi Zero 2 W.
+
+---
+
+## 🔥 How it works
+
+- CPU generates heat  
+- Thermal pad transfers heat upward  
+- Metal lid spreads heat across entire surface  
+- Heat dissipates into surrounding air  
+
+---
+
+## 🧩 Required materials
+
+- Thermal pad (preferred) or thermal paste  
+- Insulating standoffs (plastic or nylon)  
+- Mounting system to apply gentle pressure  
+
+---
+
+## ⚙️ Construction steps
+
+### 1. Position Pi
+- Mount Pi close to the lid inside enclosure  
+
+### 2. Add thermal interface
+- Place thermal pad on CPU area  
+- Ensure full contact with metal lid  
+
+### 3. Secure alignment
+- Use spacers so Pi is not crushed  
+- Maintain consistent pressure contact  
+
+---
+
+## ⚠️ Safety rules
+
+- Never let bare PCB touch metal  
+- Avoid over-tight mounting pressure  
+- Ensure SD card and GPIO pins are not stressed  
+- Electrically isolate all components from enclosure  
+
+---
+
+## 🌡 Resulting thermal system
+
+```
+CPU → thermal pad → metal lid → ambient air
+```
+
+This turns the entire box into a passive cooling shell, similar to industrial embedded systems.
